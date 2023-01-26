@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyline vs. E46</title>
+    <style>
+        .cars{
+            height:50px;
+        }
+        .small{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .medium {
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .large {
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .small>img {
+            width: 15%;
+            height: 15%;
+        }
+        .medium>img {
+            width: 25%;
+            height: 25%;
+        }
+        .large>img {
+            width: 50%;
+            height: 50%;
+        }
+        
+
+    </style>
+</head>
+
+<body id="background">
+
+    <div style="display: flex; align-items: center; justify-content: center; height: 150px">
+        <p style="text-align: center"></p>
+    </div>
+
+    
+    
+    <center>
+        <h1 id="headline">Skyline vs. E46</h1>
+        <button onclick="skyline()">Skyline</button>
+        <button onclick="skylinevse46()">Skyline vs E46</button>
+        <button onclick="E46()">E46</button>
+        <button onclick="darkmode()">Darkmode</button>
+    </center>
+
+    <div class='cars'></div>
+
+    <div class="small">
+        <img id="car1" src="skyline.jpg">
+        <img id="car2" src="skyline+e46.jpg">
+        <img id="car3" src="e46.jpg">
+    </div>
+
+    <div class="medium">
+        <img id="car4" src="skyline.jpg">
+        <img id="car5" src="skyline+e46.jpg">
+        <img id="car6" src="e46.jpg">
+    </div>
+    
+    <div class="large">
+        <img id="car7" src="skyline.jpg">
+        <img id="car8" src="skyline+e46.jpg">
+        <img id="car9" src="e46.jpg">
+    </div>
+
+    <script>
+
+        function skyline() {
+
+            document.getElementsByClassName('small')[0].style.display="flex";
+            document.getElementsByClassName('medium')[0].style.display="none";
+            document.getElementsByClassName('large')[0].style.display="none";
+
+        }
+        function skylinevse46() {
+
+            document.getElementsByClassName('small')[0].style.display="none";
+            document.getElementsByClassName('medium')[0].style.display="flex";
+            document.getElementsByClassName('large')[0].style.display="none";
+        }
+        function E46() {
+            
+            document.getElementsByClassName('small')[0].style.display="none";
+            document.getElementsByClassName('medium')[0].style.display="none";
+            document.getElementsByClassName('large')[0].style.display="flex";
+        }
+        var redmode = false
+        function darkmode() {
+            if(redmode == false) {
+                document.getElementById('background').style.backgroundColor = 'black'
+                document.getElementById('headline').style.color = 'red'
+                redmode = true
+            }
+            else {
+                document.getElementById('background').style.backgroundColor = 'white'
+                document.getElementById('headline').style.color = 'black'
+                redmode = false
+            }
+
+        }
+        
+    </script>
+
+</body>
+
+</html>
